@@ -13,16 +13,14 @@ namespace MiCalculadora
 {
     public partial class FormCalculadora : Form
     {
-        /// <summary>
-        /// 
-        /// </summary>
         public FormCalculadora()
         {
             InitializeComponent();
         }
 
         /// <summary>
-        /// 
+        /// En la carga del formulario, se limpian los datos de los TextBox, ComboBox y Label. Tambien
+        /// se realiza la carga de operadores posibles para operar.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -37,7 +35,7 @@ namespace MiCalculadora
         }
 
         /// <summary>
-        /// 
+        /// Al hacer click sobre el boton Limpiar, se limpian los datos de los TextBox, ComboBox y Label.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -47,7 +45,7 @@ namespace MiCalculadora
         }
 
         /// <summary>
-        /// 
+        /// Limpia los datos de los TextBox, ComboBox y Label.
         /// </summary>
         private void Limpiar()
         {
@@ -58,7 +56,7 @@ namespace MiCalculadora
         }
 
         /// <summary>
-        /// 
+        /// Al hacer click sobre el boton Cerrar, intenta cerrar el formulario. Si contesta SI se cerrará, si contesta NO continua en ejecución.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -68,7 +66,7 @@ namespace MiCalculadora
         }
 
         /// <summary>
-        /// 
+        /// Intenta cerrar el formulario. Si contesta SI se cerrará, si contesta NO continua en ejecución.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -82,7 +80,8 @@ namespace MiCalculadora
         }
 
         /// <summary>
-        /// 
+        /// Al hacer click sobre el boton Operar, realiza de ser posible una operacion entre dos numero.
+        /// El resultado de la operacion se muestra por medio de un Label y se carga en una lista.
         /// </summary>
         /// <param name="sender">sender representa algo</param>
         /// <param name="e"></param>
@@ -106,12 +105,12 @@ namespace MiCalculadora
         }
 
         /// <summary>
-        /// 
+        /// Recibe dos valores y un operador en formato string para operar entre ellos.
         /// </summary>
-        /// <param name="numero1"></param>
-        /// <param name="numero2"></param>
-        /// <param name="operador"></param>
-        /// <returns></returns>
+        /// <param name="numero1">Primer valor de formato string para operar</param>
+        /// <param name="numero2">Segundo valor de formato string para operar</param>
+        /// <param name="operador">Operador en formato string para operar</param>
+        /// <returns>Retorna el resultado de la operacion entre los valores recibidos en formato double</returns>
         private static double Operar(string numero1, string numero2, string operador)
         {
             Operando primerNumero = new Operando(numero1);
@@ -130,7 +129,9 @@ namespace MiCalculadora
         }
 
         /// <summary>
-        /// 
+        /// Al hacer click sobre el boton Convertir a Binario, intenta convertir el resultado de una operacion
+        /// previamente realizada de un formato decimal a binario.
+        /// El resultado de la operacion se muestra por medio de un Label y se carga en una lista.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -150,7 +151,9 @@ namespace MiCalculadora
         }
 
         /// <summary>
-        /// 
+        /// Al hacer click sobre el boton Convertir a Decimal, intenta convertir el resultado de una operacion
+        /// previamente realizada de un formato binario a decimal.
+        /// El resultado de la operacion se muestra por medio de un Label y se carga en una lista.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -166,7 +169,6 @@ namespace MiCalculadora
                 lblResultado.Text = numeroConvertido;
                 lstOperaciones.Items.Add($"{resultado} = {numeroConvertido}");
             }
-
         }
     }
 }

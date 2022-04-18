@@ -11,10 +11,10 @@ namespace Entidades
         /// <summary>
         /// Realiza una operacion utilizando dos Operando y un operador.
         /// </summary>
-        /// <param name="num1"></param>
-        /// <param name="num2"></param>
-        /// <param name="operador"></param>
-        /// <returns></returns>
+        /// <param name="num1">Primer valor de formato Operando para operar</param>
+        /// <param name="num2">Segundo valor de formato Operando para operar</param>
+        /// <param name="operador">Operador en formato char para operar</param>
+        /// <returns>Retorna el resultado de la operacion entre los valores recibidos en formato double</returns>
         public static double Operar(Operando num1, Operando num2, char operador)
         {
             double resultado=0;
@@ -43,10 +43,10 @@ namespace Entidades
         }
 
         /// <summary>
-        /// 
+        /// Valida un operador recibido de formato char.
         /// </summary>
-        /// <param name="operador"></param>
-        /// <returns></returns>
+        /// <param name="operador">Operador en formato char para validar</param>
+        /// <returns>Retorna el operador validado en formato char</returns>
         private static char ValidarOperador(char operador)
         {            
             if(operador == '+' || operador == '-' || operador == '*' || operador == '/')

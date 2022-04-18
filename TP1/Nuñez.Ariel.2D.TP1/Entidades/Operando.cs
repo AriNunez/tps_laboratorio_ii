@@ -11,7 +11,7 @@ namespace Entidades
         private double numero;
 
         /// <summary>
-        /// 
+        /// Propiedad que asigna un valor validado de formato string en el atributo privado numero.
         /// </summary>
         private string Numero
         {
@@ -36,6 +36,11 @@ namespace Entidades
             this.Numero = strNumero;
         }
 
+        /// <summary>
+        /// Valida un valor recibido en formato string e intenta convertirlo a formato double.
+        /// </summary>
+        /// <param name="strNumero">Valor en formato string para validar</param>
+        /// <returns>Retorna el valor recibido, ya convertido y en formato double</returns>
         private double ValidarOperando(string strNumero)
         {
             double numero = 0;
@@ -48,6 +53,12 @@ namespace Entidades
             return numero;
         }
 
+        /// <summary>
+        /// Recibe un numero del cual obtiene unicamente su parte entera y positiva, y la convierte de decimal
+        /// a binario. Luego retorna en formato string el resultado en binario.
+        /// </summary>
+        /// <param name="numero">Valor a convertir en binario</param>
+        /// <returns>Retorna un valor en formato string que representa el binario</returns>
         public string DecimalBinario(double numero)
         {
             int numeroAbsoluto = (int)Math.Abs(numero);
@@ -69,6 +80,11 @@ namespace Entidades
             return binario;
         }
 
+        /// <summary>
+        /// Convierte un numero decimal a binario en caso de ser posible.
+        /// </summary>
+        /// <param name="numero">Valor en formato string para convertir a binario</param>
+        /// <returns>Retorna un string. Si se pudo convertir el valor a binario lo retorna, sino retorna un valor invalido</returns>
         public string DecimalBinario(string numero)
         {
             double numeroAuxiliar;
@@ -79,6 +95,13 @@ namespace Entidades
 
             return "Valor inválido";
         }
+
+        /// <summary>
+        /// Valida que el valor recibido en formato string sea un binario, y luego lo convierte a decimal en caso
+        /// de ser posible.
+        /// </summary>
+        /// <param name="binario">Valor de formato string para convertir</param>
+        /// <returns>Retorna un string. Si se pudo convertir el valor a decimal lo retorna, sino retorna un valor invalido</returns>
         public string BinarioDecimal(string binario)
         {
             char[] arrayBinario = binario.ToCharArray();
@@ -102,6 +125,11 @@ namespace Entidades
             return "Valor inválido";
         }
 
+        /// <summary>
+        /// Valida que el valor recibido en formato string sea un binario.
+        /// </summary>
+        /// <param name="binario">Valor en formato string para validar</param>
+        /// <returns>Retorna true en caso de ser binario, o false si no lo es</returns>
         private bool EsBinario(string binario)
         {
             for (int i = 0; i < binario.Length; i++)
@@ -115,18 +143,46 @@ namespace Entidades
             return true;
         }
 
+        /// <summary>
+        /// Realiza la suma entre los atributos numero de los dos Operando recibidos.
+        /// </summary>
+        /// <param name="n1">Primer valor para operar</param>
+        /// <param name="n2">Segundo valor para operar</param>
+        /// <returns>Retorna un double que contiene el resultado de la suma</returns>
         public static double operator +(Operando n1,Operando n2)
         {
             return n1.numero + n2.numero;
         }
+
+        /// <summary>
+        /// Realiza la resta entre los atributos numero de los dos Operando recibidos.
+        /// </summary>
+        /// <param name="n1">Primer valor para operar</param>
+        /// <param name="n2">Segundo valor para operar</param>
+        /// <returns>Retorna un double que contiene el resultado de la resta</returns>
         public static double operator -(Operando n1, Operando n2)
         {
             return n1.numero - n2.numero;
         }
+
+        /// <summary>
+        /// Realiza la multiplicacion entre los atributos numero de los dos Operando recibidos.
+        /// </summary>
+        /// <param name="n1">Primer valor para operar</param>
+        /// <param name="n2">Segundo valor para operar</param>
+        /// <returns>Retorna un double que contiene el resultado de la multiplicacion</returns>
         public static double operator *(Operando n1, Operando n2)
         {
             return n1.numero * n2.numero;
         }
+
+        /// <summary>
+        /// Realiza la division en caso de ser posible entre los atributos numero de los dos Operando recibidos.
+        /// </summary>
+        /// <param name="n1">Primer valor para operar</param>
+        /// <param name="n2">Segundo valor para operar</param>
+        /// <returns>Si el segundo operando es distinto de cero, retorna un double que contiene el resultado de la division. 
+        /// Si no lo es retorna el valor minimo de double.</returns>
         public static double operator /(Operando n1, Operando n2)
         {
             if(n2.numero != 0)
