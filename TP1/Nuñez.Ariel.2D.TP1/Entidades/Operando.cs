@@ -10,7 +10,9 @@ namespace Entidades
     {
         private double numero;
 
-        // constructores no se comentan
+        /// <summary>
+        /// 
+        /// </summary>
         private string Numero
         {
             set
@@ -37,6 +39,7 @@ namespace Entidades
         private double ValidarOperando(string strNumero)
         {
             double numero = 0;
+
             if(Double.TryParse(strNumero.Trim(),out numero))
             {
                 return numero;
@@ -45,21 +48,59 @@ namespace Entidades
             return numero;
         }
 
-        //public static string BinarioDecimal(string binario)
-        //{
+        public string DecimalBinario(double numero)
+        {
+            int numeroAbsoluto = (int)Math.Abs(numero);
+            string binario = string.Empty;
 
-        //}
+            if(numeroAbsoluto == 0)
+            {
+                binario = "0";
+            }
+            else
+            {
+                while (numeroAbsoluto > 0)
+                {
+                    binario = (numeroAbsoluto % 2) + binario;
+                    numeroAbsoluto = (int)numeroAbsoluto / 2;
+                }
+            }
 
-        //public static string DecimalBinario(double numero)
-        //{
+            return binario;
+        }
 
-        //}
+        public string DecimalBinario(string numero)
+        {
+            double numeroAuxiliar;
+            if(Double.TryParse(numero,out numeroAuxiliar))
+            {
+                return DecimalBinario(numeroAuxiliar);
+            }
 
-        //public static string DecimalBinario(string numero)
-        //{
+            return "Valor inválido";
+        }
+        public string BinarioDecimal(string binario)
+        {
+            char[] arrayBinario = binario.ToCharArray();
+            int numeroDecimal = 0;
+            
+            Array.Reverse(arrayBinario);
 
-        //}
+            if(EsBinario(binario))
+            {
+                for(int i = 0; i < arrayBinario.Length; i++)
+                {
+                    if(arrayBinario[i] == '1')
+                    {
+                        numeroDecimal += (int)Math.Pow(2, i);
+                    }
+                }
 
+                return numeroDecimal.ToString();
+            }
+
+            return "Valor inválido";
+        }
 
         private bool EsBinario(string binario)
         {
