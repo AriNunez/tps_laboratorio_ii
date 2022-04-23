@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\source\\repos\\Labo2\\TP1\\Nuñez.Ariel.2D.TP1\\Entidades\\Entidades.csproj",
+      "projectUniqueName": "C:\\Users\\user\\source\\repos\\tps_laboratorio_ii\\TP1\\Nuñez.Ariel.2D.TP1\\Entidades\\Entidades.csproj",
       "projectName": "Entidades",
-      "projectPath": "C:\\Users\\user\\source\\repos\\Labo2\\TP1\\Nuñez.Ariel.2D.TP1\\Entidades\\Entidades.csproj",
+      "projectPath": "C:\\Users\\user\\source\\repos\\tps_laboratorio_ii\\TP1\\Nuñez.Ariel.2D.TP1\\Entidades\\Entidades.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\source\\repos\\Labo2\\TP1\\Nuñez.Ariel.2D.TP1\\Entidades\\obj\\",
+      "outputPath": "C:\\Users\\user\\source\\repos\\tps_laboratorio_ii\\TP1\\Nuñez.Ariel.2D.TP1\\Entidades\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
