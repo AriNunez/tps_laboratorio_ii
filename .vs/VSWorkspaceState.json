@@ -3,8 +3,11 @@
     "",
     "\\TP1",
     "\\TP1\\Nuñez.Ariel.2D.TP1",
-    "\\TP1\\Nuñez.Ariel.2D.TP1\\MiCalculadora"
+    "\\TP1\\Nuñez.Ariel.2D.TP1\\MiCalculadora",
+    "\\TP2",
+    "\\TP2\\TP-02",
+    "\\TP2\\TP-02\\Entidades"
   ],
-  "SelectedNode": "\\TP1\\Nuñez.Ariel.2D.TP1\\MiCalculadora\\FormCalculadora.cs",
+  "SelectedNode": "\\TP2\\TP-02\\Entidades\\Vehiculo.cs",
   "PreviewInSolutionExplorer": false
 }
